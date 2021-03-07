@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+
+  postgres:
+    image: postgres:9.6-alpine
+    container_name: postgres
+    ports:
+      - 5432:5432
+#    volumes:
+#      - postgres:/data/postgresql
+    environment:
+      POSTGRES_USER: 'postgres'
+      POSTGRES_PASSWORD: 'postgres'
+      POSTGRES_DB: 'Persons'
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - 27017:27017
+#    volumes:
+#      - mongo:/data/mongodb
+    environment:
+      MONGODB_USER: 'mongo'
+      MONGODB_PASSWORD: 'mongo'
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    ports:
+      - 6379:6379
+#    volumes:
+#      - redis:/data/redis
+
